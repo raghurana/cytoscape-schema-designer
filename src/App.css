@@ -1,0 +1,24 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.rootContainer {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  background-color: pink;
+  height: 100vh;
+  padding: 20px;
+}
+
+#jsonOutput {
+  flex: 1;
+  width: 100%;
+  resize: none;
+}
