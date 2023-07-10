@@ -1,0 +1,25 @@
+.schematicWrapper {
+  display: flex;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.fullscreenContainer {
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 100%;
+}
+
+.cytoscapeContainer {
+  background: 'whitesmoke';
+  height: 100%;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

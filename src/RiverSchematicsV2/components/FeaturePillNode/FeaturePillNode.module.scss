@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  background-color: #2461e5;
+  color: #2461e5;
+  border-radius: 50px;
+  border: 3px solid #2461e5;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container:hover {
+  color: white;
+  background-color: #1e1e1e;
+  border: 3px solid #1e1e1e;
+}
+
+.selected {
+  color: #1e1e1e;
+  background-color: white;
+  border: 3px solid #1e1e1e;
+}
+
+.withContent {
+  width: fit-content;
+  overflow: hidden;
+}
+
+.icon {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  background-color: white;
+  left: -3px;
+  top: -3px;
+  border-radius: 50px;
+  border: 3px solid #2461e5;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconSelected {
+  border: 3px solid #1e1e1e;
+}
+
+.container:hover .icon {
+  border: 3px solid #1e1e1e;
+}
+
+.iconHoverDark {
+  &:hover {
+    background-color: #1e1e1e;
+  }
+}
+
+.content {
+  display: flex;
+  padding: 0px 8px 0px 36px;
+  height: 100%;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  white-space: pre;
+}
+
+.selectedContent {
+  color: #1e1e1e;
+  background-color: white;
+}
+
+.riverGauge {
+  background-color: white;
+  color: #2461e5;
+}
+
+.container:hover .riverGauge {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.storage {
+  background-color: #2461e5;
+  color: white;
+}
+
+.container:hover .storage {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.wetland {
+  border: 3px solid #164d39;
+  background-color: #164d39;
+  color: white;
+  cursor: default;
+  &:hover {
+    background-color: #164d39;
+    border: 3px solid #164d39;
+    .icon {
+      border: 3px solid #164d39;
+    }
+  }
+}
+
+.wetlandIcon {
+  border: 3px solid #164d39;
+  background-color: white;
+  color: #164d39;
+}

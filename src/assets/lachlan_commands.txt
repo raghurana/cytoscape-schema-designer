@@ -1,0 +1,12 @@
+update edge between 519 and 718 to curve left
+update edge attribute label_margin_y to -15 on 1819
+update edge attribute label_margin_x to 15 on 1819
+update edge between 517 and 716 to curve left
+update edge attribute label_margin_y to -15 on 1817
+update edge between 509 and 308 to curve right
+update edge attribute label_margin_y to -40 on 1404
+update edge attribute label_margin_y to -40 on 1604
+update edge attribute label_margin_x to 60 on 1525
+update edge attribute label_margin_y to 15 on 1525
+update node attribute label_margin_x to -35 on 324
+update node attribute label_margin_y to -15 on 324

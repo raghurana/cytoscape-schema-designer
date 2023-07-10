@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  position: absolute;
+  padding: 10px;
+  top: 45px;
+  right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  -moz-box-shadow: 12px 10px 28px -4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 12px 10px 28px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 10px 28px -4px rgba(0, 0, 0, 0.75);
+}
+
+select {
+  margin-left: 5px;
+}

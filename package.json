@@ -1,8 +1,7 @@
 {
   "name": "fsd",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite --open",
     "build": "tsc && vite build",
@@ -10,13 +9,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nlpjs/lang-en-min": "^4.26.1",
+    "@nlpjs/nlp": "^4.27.0",
+    "classnames": "^2.3.2",
+    "cytoscape": "^3.25.0",
+    "cytoscape-dom-node": "^1.1.1",
+    "immer": "^10.0.2",
+    "json-case-convertor": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-full-screen": "^1.1.1",
+    "react-router-dom": "^6.14.1",
     "zustand": "^4.3.9"
   },
   "devDependencies": {
+    "@types/cytoscape": "^3.19.10",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
@@ -24,6 +34,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
     "prettier": "3.0.0",
+    "sass": "^1.63.6",
     "typescript": "^5.0.2",
     "vite": "^4.4.0"
   }

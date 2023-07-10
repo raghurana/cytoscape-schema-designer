@@ -1,0 +1,11 @@
+.command {
+  font-size: larger;
+}
+
+.param {
+  font-size: medium;
+  border-radius: 6px;
+  background-color: lightgray;
+  color: black;
+  padding: 5px;
+}

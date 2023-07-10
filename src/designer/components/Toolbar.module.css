@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  padding: 5px 0px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
