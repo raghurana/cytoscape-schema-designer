@@ -3,6 +3,7 @@ import {
   SchematicEdge,
   SchematicNode,
   SchematicPanExtent,
+  Types,
 } from '../components/RiverSchematic/RiverSchematic.interfaces.ts';
 
 export const CytoUtils = {
@@ -51,7 +52,7 @@ export const CytoUtils = {
       GreyMedium: '#DEDEDE', // Border background
       BrightRed: '#FF0000', // Border limit reached
     },
-    getDefaultNetworkStyles: (): Stylesheet[] => {
+    getDefaultNetworkStyles: (graphOptions: Types.GraphOptions): Stylesheet[] => {
       return [
         // ==============================================================================
         // Default node styles
@@ -117,7 +118,10 @@ export const CytoUtils = {
           selector: 'edge',
           style: {
             label: 'data(ui_hints.label)',
-            color: CytoUtils.styling.colors.CharcoalDark,
+            color:
+              graphOptions?.designerSettings?.edges?.appendToLabel === 'none'
+                ? CytoUtils.styling.colors.CharcoalDark
+                : CytoUtils.styling.colors.BrightRed,
             width: 'data(ui_hints.width)',
             'line-color': CytoUtils.styling.colors.ElectricBlue,
             'line-cap': 'round',

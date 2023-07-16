@@ -7,6 +7,8 @@ import { CytoUtils } from '../utils';
 
 Cytoscape.use(CyDomNode);
 
+type CytoscapeExtended = cytoscape.Core & { domNode: () => void };
+
 export const useCytoscape = (containerRef: React.RefObject<HTMLElement>, graphOptions: Types.GraphOptions) => {
   const [cy, setCy] = useState<cytoscape.Core | null>(null);
   const setSelectedFeature = useRiverSchematicStore((s) => s.uiFeatureCard.setSelectedFeature);
@@ -16,7 +18,7 @@ export const useCytoscape = (containerRef: React.RefObject<HTMLElement>, graphOp
 
     const cytoInstance = Cytoscape({
       autolock: true,
-      style: CytoUtils.styling.getDefaultNetworkStyles(),
+      style: CytoUtils.styling.getDefaultNetworkStyles(graphOptions),
       container: containerRef.current,
       minZoom: graphOptions.minZoom,
       maxZoom: graphOptions.maxZoom,
@@ -24,7 +26,7 @@ export const useCytoscape = (containerRef: React.RefObject<HTMLElement>, graphOp
     });
 
     // https://www.npmjs.com/package/cytoscape-dom-node
-    const cytoDom = cytoInstance as any;
+    const cytoDom = cytoInstance as CytoscapeExtended;
     cytoDom.domNode();
 
     const clickHandler = (event?: MouseEvent) => {

@@ -23,7 +23,9 @@ export const useFeatureInfoPopup = (props: Props) => {
     [nodes],
   );
 
-  const handleCloseClick = useCallback(() => {}, []);
+  const handleCloseClick = useCallback(() => {
+    console.log('not implemented');
+  }, []);
 
   return { handleFeatureClick, handleCloseClick };
 };

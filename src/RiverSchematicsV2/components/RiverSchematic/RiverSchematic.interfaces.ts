@@ -21,13 +21,7 @@ export interface SchematicNode {
   feature_type: Types.NodeFeatureType;
   feature_label: string;
   geometry: Position;
-  attributes:
-    | StorageAttributes
-    | TownAttributes
-    | RiverGaugeAttributes
-    | JunctionAttributes
-    | WetlandAttributes
-    | FloodplainAttributes;
+  attributes: StorageAttributes | TownAttributes | RiverGaugeAttributes | JunctionAttributes | WetlandAttributes | FloodplainAttributes;
   current?: CurrentStorageDetails | CurrentRiverGaugeDetails;
   ui_hints?: {
     label?: string;
@@ -82,7 +76,7 @@ export interface CurrentRiverGaugeDetails {
   watercourseLevel: number;
   watercourseLevelPrevDay: number;
   lastUpdated: string;
-  waterQualityLastUpdated: any | null;
+  waterQualityLastUpdated: string | null;
   hasWaterQuality: boolean;
   waterQuality: WaterQualityValue[];
 }

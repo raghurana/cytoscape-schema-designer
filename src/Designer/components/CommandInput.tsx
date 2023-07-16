@@ -12,10 +12,7 @@ export const CommandInput: React.FC = () => {
       const fr = new FileReader();
       fr.onload = (e) => {
         const commands = e.target?.result;
-        if (typeof commands === 'string') {
-          const arr = commands.split('\n');
-          arr.forEach((command) => setTimeout(() => processCommand(command), 1000));
-        }
+        if (typeof commands === 'string') commands.split(/\r?\n/).forEach((command) => setTimeout(() => processCommand(command), 1000));
       };
       fr.readAsText(selectedFile);
       event.currentTarget.value = '';
@@ -26,8 +23,10 @@ export const CommandInput: React.FC = () => {
   const onCommandInputKeyup = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
-        processCommand(e.currentTarget.value);
-        e.currentTarget.value = '';
+        const target = e.currentTarget;
+        processCommand(target.value).then((wasSuccess) => {
+          if (wasSuccess) target.value = '';
+        });
       }
     },
     [processCommand],

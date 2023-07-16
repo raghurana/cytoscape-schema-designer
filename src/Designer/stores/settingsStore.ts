@@ -4,10 +4,12 @@ import { immer } from 'zustand/middleware/immer';
 
 interface State {
   open: boolean;
+  showJson: boolean;
   graphOptions: Types.GraphOptions;
   nodeLabelOptions: Types.NodeLabelDesignerExtension[];
   edgeLabelOptions: Types.EdgeLabelDesignerExtension[];
   setOpen: (open: boolean) => void;
+  setShowJson: (showJson: boolean) => void;
   updateNodeLabelOption: (newOption: Types.NodeLabelDesignerExtension) => void;
   updateEdgeLabelOption: (newOption: Types.EdgeLabelDesignerExtension) => void;
 }
@@ -15,7 +17,7 @@ interface State {
 export const useSettingsStore = create(
   immer<State>((set) => ({
     open: false,
-    jsonOutputVisible: false,
+    showJson: false,
     nodeLabelOptions: ['id', 'geometry', 'none'],
     edgeLabelOptions: ['id', 'none'],
     graphOptions: {
@@ -27,17 +29,22 @@ export const useSettingsStore = create(
       featureSettings: { riverGauge: 'FlowRate', storage: 'PercentageFull' },
       designerSettings: {
         nodes: {
-          appendToLabel: 'none',
+          appendToLabel: 'id',
           showJunctions: true,
         },
         edges: {
-          appendToLabel: 'none',
+          appendToLabel: 'id',
         },
       },
     },
     setOpen(open: boolean) {
       set((prev) => {
         prev.open = open;
+      });
+    },
+    setShowJson(newValue: boolean) {
+      set((prev) => {
+        prev.showJson = newValue;
       });
     },
     updateNodeLabelOption(newOption: Types.NodeLabelDesignerExtension) {

@@ -9,8 +9,8 @@ export const JsonOutput: React.FC = () => {
       <textarea
         readOnly
         style={{ resize: 'none', width: '100%' }}
-        placeholder="json"
-        value={latestDefinition ? JSON.stringify(latestDefinition, null, 1) : ''}
+        placeholder="{}"
+        value={latestDefinition ? JSON.stringify(latestDefinition, null, 3) : ''}
       />
     </div>
   );

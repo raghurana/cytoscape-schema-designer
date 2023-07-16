@@ -1,5 +1,6 @@
 import { Commands } from './commands';
 import * as CommandFactory from './commandsFactory';
+import { V8nValidator } from 'v8n';
 
 export const CommandsNlp: NlpCommandDefinition[] = [
   CommandFactory.undoCommand(),
@@ -9,11 +10,15 @@ export const CommandsNlp: NlpCommandDefinition[] = [
   CommandFactory.deleteEdgeCommand(),
   CommandFactory.updateEdgeCurveCommand(),
   CommandFactory.updateAttributeCommand(),
+  CommandFactory.moveLabelCommand(),
 ];
 
 export interface NlpCommandDefinition {
   intent: keyof Commands;
   commandText: string;
+  commandNotes: string;
+  commandExample: string;
+  commandValidator?: V8nValidator;
   entityExtraction?: {
     entityText: string;
     rule: TrimAfterMatch | TrimBetweenMatch;

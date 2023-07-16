@@ -8,7 +8,7 @@ export function riverLabelTransformer(edge: SchematicEdge, options?: Types.Graph
     let extraLabel;
     if (options?.designerSettings?.edges?.appendToLabel === 'none') extraLabel = '';
     else if (options?.designerSettings?.edges?.appendToLabel === 'id') extraLabel = ` [${edge.id}]`;
-    edge.ui_hints.label = riverAttribs.segment_no === 1 ? `${riverAttribs.river_name} ${extraLabel}` : '';
+    edge.ui_hints.label = +riverAttribs.segment_no === 1 ? `${riverAttribs.river_name} ${extraLabel}` : `${extraLabel}`;
   }
   return edge;
 }

@@ -6,10 +6,7 @@ import { CytoUtils } from '../../utils/index';
 import styles from './RiverSchematic.module.scss';
 import * as Hooks from '../../hooks';
 
-const Component: React.FC<{ catchmentId: number; graphOptions: Types.GraphOptions }> = ({
-  catchmentId,
-  graphOptions,
-}) => {
+const Component: React.FC<{ catchmentId: number; graphOptions: Types.GraphOptions }> = ({ catchmentId, graphOptions }) => {
   const cytoContainerRef = useRef<HTMLDivElement>(null);
 
   const cytoscape = Hooks.useCytoscape(cytoContainerRef, graphOptions);
@@ -22,15 +19,11 @@ const Component: React.FC<{ catchmentId: number; graphOptions: Types.GraphOption
   useEffect(() => {
     if (!cytoscape) return;
     CytoUtils.zooming.zoomToFit(cytoscape, graphOptions.zoomPadding);
-  }, [cytoscape, renderInfo.featureNodes.length]);
+  }, [cytoscape, graphOptions.zoomPadding, renderInfo.featureNodes.length]);
 
   return (
     <div className={styles.schematicWrapper}>
-      <FullScreen
-        className={styles.fullscreenContainer}
-        handle={fullScreen.fsHandle}
-        onChange={fullScreen.handlerOnChange}
-      >
+      <FullScreen className={styles.fullscreenContainer} handle={fullScreen.fsHandle} onChange={fullScreen.handlerOnChange}>
         {!riverData && <div className={styles.loading}>No Data</div>}
         <div className={styles.cytoscapeContainer} ref={cytoContainerRef}>
           <Features

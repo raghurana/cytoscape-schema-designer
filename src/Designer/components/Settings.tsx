@@ -5,9 +5,11 @@ import { Types } from '../../RiverSchematicsV2/components/RiverSchematic/RiverSc
 
 export const Settings: React.FC = () => {
   const store = createSelectors(useSettingsStore);
+  const showJson = store.use.showJson();
   const graphOptions = store.use.graphOptions();
   const nodeLabelOptions = store.use.nodeLabelOptions();
   const edgeLabelOptions = store.use.edgeLabelOptions();
+  const setShowJson = store.use.setShowJson();
   const updateNodeLabelOption = store.use.updateNodeLabelOption();
   const updateEdgeLabelOption = store.use.updateEdgeLabelOption();
 
@@ -38,6 +40,9 @@ export const Settings: React.FC = () => {
             </option>
           ))}
         </select>
+      </label>
+      <label>
+        Show Json: <input type="checkbox" checked={showJson} onChange={() => setShowJson(!showJson)} />
       </label>
       <a href="./commands" target="_blank">
         Show Commands (new tab)

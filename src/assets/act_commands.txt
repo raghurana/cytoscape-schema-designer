@@ -1,0 +1,46 @@
+move label 30 points left on 352
+move label 15 points down on 352
+update edge between 549 and 348 to curve right
+move label 10 points up on 1449
+update edge between 542 and 741 to curve left
+move label 10 points up on 1841
+move label 31 points left on 1841
+move label 10 points up on 1738
+update edge between 536 and 735 to curve left
+update edge between 534 and 735 to curve right
+move label 10 points up on 1835
+move label 10 points right on 1835
+update edge between 532 and 931 to curve left
+update edge between 531 and 730 to curve left
+move label 35 points up on 2030
+move label 35 points up on 1830
+update edge between 529 and 128 to curve right
+update edge between 528 and 927 to curve left
+move label 35 points up on 1227
+move label 35 points up on 2019
+update edge between 526 and 325 to curve right
+move label 35 points up on 1425
+update edge between 518 and 717 to curve left
+move label 35 points up on 1817
+update edge between 517 and 316 to curve right
+move label 35 points up on 1414
+update edge between 512 and 311 to curve right
+update edge between 511 and 910 to curve left
+update edge between 310 and 109 to curve right
+move label 35 points up on 1207
+move label 35 points up on 1408
+move label 35 points up on 1606
+update edge between 510 and 709 to curve left
+move label 35 points up on 1809
+move label 35 points up on 2004
+move label 35 points up on 2231
+update edge between 1139 and 938 to curve right
+move label 35 points up on 2449
+move label 15 points down on 2553
+move label 125 points right on 2553
+move label 35 points up on 2650
+update edge between 1349 and 1551 to curve left
+update edge between 1140 and 1349 to curve left
+update attribute segment_no to 1 on 1153
+move label 15 points down on 1153
+move label 80 points left on 1153
