@@ -1,16 +1,6 @@
 export interface SchematicJsonData {
-  has_data?: boolean;
-  show_warnings?: boolean;
-  last_updated?: string;
-  extent?: {
-    x_min: number;
-    x_max: number;
-    y_min: number;
-    y_max: number;
-  };
-  meta: {
-    name: string;
-  };
+  catchmentId: number;
+  river_schematic_name?: string;
   nodes: SchematicNode[];
   edges: SchematicEdge[];
 }
@@ -21,7 +11,7 @@ export interface SchematicNode {
   feature_type: Types.NodeFeatureType;
   feature_label: string;
   geometry: Position;
-  attributes: StorageAttributes | TownAttributes | RiverGaugeAttributes | JunctionAttributes | WetlandAttributes | FloodplainAttributes;
+  attributes: NodeAttributes;
   current?: CurrentStorageDetails | CurrentRiverGaugeDetails;
   ui_hints?: {
     label?: string;
@@ -52,6 +42,14 @@ export interface SchematicEdge {
     curve_position?: string;
   };
 }
+
+export type NodeAttributes =
+  | StorageAttributes
+  | TownAttributes
+  | RiverGaugeAttributes
+  | JunctionAttributes
+  | WetlandAttributes
+  | FloodplainAttributes;
 
 export interface EdgeAttributes {
   river_name: string;
@@ -199,10 +197,21 @@ export interface SchematicPanExtent {
   yMax: number;
 }
 
+export const riverSizeMap = new Map<number, Types.RiverSize>();
+riverSizeMap.set(1, 'major river');
+riverSizeMap.set(3, 'tributary');
+
+export const riverTypeMap = new Map<number, Types.RiverType>();
+riverTypeMap.set(1, 'normal');
+riverTypeMap.set(2, 'ephemeral');
+riverTypeMap.set(3, 'channel/canal');
+
 export namespace Types {
   export type NodeFeatureType = 'Junction' | 'Rivergauge' | 'Storage' | 'Town' | 'Wetland' | 'Floodplain';
   export type EdgeCurveType = 'left' | 'right';
   export type SpecialFeature = 'Rivergauge' | 'Storage' | 'Wetland';
+  export type RiverSize = 'major river' | 'tributary';
+  export type RiverType = 'normal' | 'ephemeral' | 'channel/canal'; // Eg of ephemeral are Gwydir flood plains
   export type InteractiveFeature = 'Rivergauge' | 'Storage';
   export type NodeLabelDesignerExtension = 'id' | 'geometry' | 'none';
   export type EdgeLabelDesignerExtension = 'id' | 'none';

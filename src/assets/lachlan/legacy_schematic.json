@@ -1,0 +1,1841 @@
+{
+	"river_schematic_name": "Lachlan",
+	"origin": "bottom-left",
+	"has_data": true,
+	"show_warnings": false,
+	"extent": {
+		"x_min": 0,
+		"x_max": 300,
+		"y_min": 0,
+		"y_max": 2100
+	},
+	"nodes": [
+		{
+			"id": 124,
+			"feature_type": "Junction",
+			"feature_label": "124",
+			"geometry": {
+				"x": 0,
+				"y": 0
+			},
+			"attributes": {
+				"junction_description": ""
+			}
+		},
+		{
+			"id": 303,
+			"feature_type": "Junction",
+			"feature_label": "303",
+			"geometry": {
+				"x": 100,
+				"y": 2100
+			},
+			"attributes": {
+				"junction_description": ""
+			}
+		},
+		{
+			"id": 304,
+			"feature_type": "Town",
+			"feature_label": "Blayney",
+			"geometry": {
+				"x": 100,
+				"y": 2000
+			},
+			"attributes": {
+				"town_name": "Blayney"
+			}
+		},
+		{
+			"id": 305,
+			"feature_type": "Storage",
+			"feature_label": "Carcoar",
+			"geometry": {
+				"x": 100,
+				"y": 1900
+			},
+			"attributes": {
+				"storage_id": 31,
+				"storage_name": "Carcoar",
+				"storage_short_name": "Carcoar"
+			},
+			"current": {
+				"storage_id": 31,
+				"storage_name": "Carcoar",
+				"storage_short_name": "Carcoar",
+				"storage_description": "Carcoar is located in New South Wales and in the Murray\u2013Darling drainage division. Carcoar Dam is a unique concrete arch dam that curves from side to side and from top to bottom.",
+				"percentage_full_now": 100.0,
+				"percentage_full_ly": 100.0,
+				"volume_total": 36144.19,
+				"volume_accessible": 35929.81,
+				"capacity_total": 36131.0,
+				"volume_dead": 214.38,
+				"surface_area": null,
+				"nsw_state_share": null,
+				"vic_state_share": null,
+				"sa_state_share": null,
+				"qld_state_share": null,
+				"state_share_effective_date": null,
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"last_updated": "2023-06-28",
+				"current_year_date": "28 Jun 2023",
+				"last_year_date": "28 Jun 2022"
+			}
+		},
+		{
+			"id": 306,
+			"feature_type": "Rivergauge",
+			"feature_label": "Belubula \u2013 Carcoar",
+			"geometry": {
+				"x": 100,
+				"y": 1800
+			},
+			"attributes": {
+				"gauge_id": "w00077-412077",
+				"gauge_name": "Belubula River at Carcoar",
+				"gauge_short_name": "Belubula \u2013 Carcoar"
+			},
+			"current": {
+				"gauge_id": "w00077-412077",
+				"wiski_gauge_id": "412077",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Belubula River at Carcoar",
+				"gauge_short_name": "Belubula \u2013 Carcoar",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 123.55,
+				"watercourse_level": 1.02,
+				"watercourse_level_prev_day": 1.06,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1688774400000,
+						"observation_value": 303.6,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "Medium",
+						"last_updated": "2023-07-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 8.11,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 307,
+			"feature_type": "Town",
+			"feature_label": "Carcoar",
+			"geometry": {
+				"x": 100,
+				"y": 1700
+			},
+			"attributes": {
+				"town_name": "Carcoar"
+			}
+		},
+		{
+			"id": 308,
+			"feature_type": "Town",
+			"feature_label": "Canowindra",
+			"geometry": {
+				"x": 100,
+				"y": 1600
+			},
+			"attributes": {
+				"town_name": "Canowindra"
+			}
+		},
+		{
+			"id": 324,
+			"feature_type": "Town",
+			"feature_label": "Balranald",
+			"geometry": {
+				"x": 100,
+				"y": 0
+			},
+			"attributes": {
+				"town_name": "Balranald"
+			}
+		},
+		{
+			"id": 503,
+			"feature_type": "Junction",
+			"feature_label": "503",
+			"geometry": {
+				"x": 200,
+				"y": 2100
+			},
+			"attributes": {
+				"junction_description": ""
+			}
+		},
+		{
+			"id": 504,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Narrawa",
+			"geometry": {
+				"x": 200,
+				"y": 2000
+			},
+			"attributes": {
+				"gauge_id": "w00077-412065",
+				"gauge_name": "Lachlan River at Narrawa",
+				"gauge_short_name": "Lachlan \u2013 Narrawa"
+			},
+			"current": {
+				"gauge_id": "w00077-412065",
+				"wiski_gauge_id": "412065",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Narrawa",
+				"gauge_short_name": "Lachlan \u2013 Narrawa",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 616.9,
+				"watercourse_level": 0.67,
+				"watercourse_level_prev_day": 0.68,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2007-02-09",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1170979200000,
+						"observation_value": 0.0,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "Low",
+						"last_updated": "2007-02-09"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1170201600000,
+						"observation_value": 3.5,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2007-01-31"
+					}
+				]
+			}
+		},
+		{
+			"id": 505,
+			"feature_type": "Storage",
+			"feature_label": "Wyangala",
+			"geometry": {
+				"x": 200,
+				"y": 1900
+			},
+			"attributes": {
+				"storage_id": 303,
+				"storage_name": "Wyangala",
+				"storage_short_name": "Wyangala"
+			},
+			"current": {
+				"storage_id": 303,
+				"storage_name": "Wyangala",
+				"storage_short_name": "Wyangala",
+				"storage_description": "Wyangala is located in New South Wales and in the Murray\u2013Darling drainage division. Wyangala is the main headwater storage in the Lachlan Valley. It was enlarged in 1971 with the installation of eight large radial gates, increasing the storage capacity by almost four times.",
+				"percentage_full_now": 98.0,
+				"percentage_full_ly": 100.0,
+				"volume_total": 1194065.92,
+				"volume_accessible": 1193340.48,
+				"capacity_total": 1217760.85,
+				"volume_dead": 725.44,
+				"surface_area": null,
+				"nsw_state_share": null,
+				"vic_state_share": null,
+				"sa_state_share": null,
+				"qld_state_share": null,
+				"state_share_effective_date": null,
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"last_updated": "2023-07-09",
+				"current_year_date": "9 Jul 2023",
+				"last_year_date": "9 Jul 2022"
+			}
+		},
+		{
+			"id": 506,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan d/s Wyangala",
+			"geometry": {
+				"x": 200,
+				"y": 1800
+			},
+			"attributes": {
+				"gauge_id": "w00077-412067",
+				"gauge_name": "Lachlan River Downstream Wyangala",
+				"gauge_short_name": "Lachlan d/s Wyangala"
+			},
+			"current": {
+				"gauge_id": "w00077-412067",
+				"wiski_gauge_id": "412067",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River Downstream Wyangala",
+				"gauge_short_name": "Lachlan d/s Wyangala",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 85.54,
+				"watercourse_level": 1.54,
+				"watercourse_level_prev_day": 1.54,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1688774400000,
+						"observation_value": 309.27,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "Medium",
+						"last_updated": "2023-07-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 11.73,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 507,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Cowra",
+			"geometry": {
+				"x": 200,
+				"y": 1700
+			},
+			"attributes": {
+				"gauge_id": "w00077-412002",
+				"gauge_name": "Lachlan River at Cowra",
+				"gauge_short_name": "Lachlan \u2013 Cowra"
+			},
+			"current": {
+				"gauge_id": "w00077-412002",
+				"wiski_gauge_id": "412002",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Cowra",
+				"gauge_short_name": "Lachlan \u2013 Cowra",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 1095.55,
+				"watercourse_level": 1.95,
+				"watercourse_level_prev_day": 1.93,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1688774400000,
+						"observation_value": 911.31,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "High",
+						"last_updated": "2023-07-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 10.16,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 508,
+			"feature_type": "Town",
+			"feature_label": "Cowra",
+			"geometry": {
+				"x": 200,
+				"y": 1600
+			},
+			"attributes": {
+				"town_name": "Cowra"
+			}
+		},
+		{
+			"id": 509,
+			"feature_type": "Junction",
+			"feature_label": "Belubula River confluences with Lachlan River",
+			"geometry": {
+				"x": 200,
+				"y": 1500
+			},
+			"attributes": {
+				"junction_description": "Belubula River confluences with Lachlan River"
+			}
+		},
+		{
+			"id": 510,
+			"feature_type": "Town",
+			"feature_label": "Gooloogong",
+			"geometry": {
+				"x": 200,
+				"y": 1400
+			},
+			"attributes": {
+				"town_name": "Gooloogong"
+			}
+		},
+		{
+			"id": 511,
+			"feature_type": "Town",
+			"feature_label": "Forbes",
+			"geometry": {
+				"x": 200,
+				"y": 1300
+			},
+			"attributes": {
+				"town_name": "Forbes"
+			}
+		},
+		{
+			"id": 512,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Forbes",
+			"geometry": {
+				"x": 200,
+				"y": 1200
+			},
+			"attributes": {
+				"gauge_id": "w00077-412004",
+				"gauge_name": "Lachlan River at Forbes",
+				"gauge_short_name": "Lachlan \u2013 Forbes"
+			},
+			"current": {
+				"gauge_id": "w00077-412004",
+				"wiski_gauge_id": "412004",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Forbes",
+				"gauge_short_name": "Lachlan \u2013 Forbes",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 2757.89,
+				"watercourse_level": 1.01,
+				"watercourse_level_prev_day": 0.85,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1688774400000,
+						"observation_value": 832.32,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "High",
+						"last_updated": "2023-07-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 10.37,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 513,
+			"feature_type": "Town",
+			"feature_label": "Condobolin",
+			"geometry": {
+				"x": 200,
+				"y": 1100
+			},
+			"attributes": {
+				"town_name": "Condobolin"
+			}
+		},
+		{
+			"id": 514,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Condobolin Br",
+			"geometry": {
+				"x": 200,
+				"y": 1000
+			},
+			"attributes": {
+				"gauge_id": "w00077-412006",
+				"gauge_name": "Lachlan River at Condobolin Bridge",
+				"gauge_short_name": "Lachlan \u2013 Condobolin Br"
+			},
+			"current": {
+				"gauge_id": "w00077-412006",
+				"wiski_gauge_id": "412006",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Condobolin Bridge",
+				"gauge_short_name": "Lachlan \u2013 Condobolin Br",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 1696.9,
+				"watercourse_level": 2.01,
+				"watercourse_level_prev_day": 2.0,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1688774400000,
+						"observation_value": 957.35,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "High",
+						"last_updated": "2023-07-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 10.15,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 515,
+			"feature_type": "Town",
+			"feature_label": "Euabalong",
+			"geometry": {
+				"x": 200,
+				"y": 900
+			},
+			"attributes": {
+				"town_name": "Euabalong"
+			}
+		},
+		{
+			"id": 516,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Lake Cargelligo Weir",
+			"geometry": {
+				"x": 200,
+				"y": 800
+			},
+			"attributes": {
+				"gauge_id": "w00077-412011",
+				"gauge_name": "Lachlan River at Lake Cargelligo Weir",
+				"gauge_short_name": "Lachlan \u2013 Lake Cargelligo Weir"
+			},
+			"current": {
+				"gauge_id": "w00077-412011",
+				"wiski_gauge_id": "412011",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Lake Cargelligo Weir",
+				"gauge_short_name": "Lachlan \u2013 Lake Cargelligo Weir",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 1467.07,
+				"watercourse_level": 0.57,
+				"watercourse_level_prev_day": 0.57,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1347062400000,
+						"observation_value": 450.53,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "Medium",
+						"last_updated": "2012-09-08"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 10.23,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 517,
+			"feature_type": "Junction",
+			"feature_label": "Lake Creek confluences with Lachlan River",
+			"geometry": {
+				"x": 200,
+				"y": 700
+			},
+			"attributes": {
+				"junction_description": "Lake Creek confluences with Lachlan River"
+			}
+		},
+		{
+			"id": 519,
+			"feature_type": "Junction",
+			"feature_label": "Mountain Creek confluences with Lachlan River",
+			"geometry": {
+				"x": 200,
+				"y": 500
+			},
+			"attributes": {
+				"junction_description": "Mountain Creek confluences with Lachlan River"
+			}
+		},
+		{
+			"id": 520,
+			"feature_type": "Town",
+			"feature_label": "Hillston",
+			"geometry": {
+				"x": 200,
+				"y": 400
+			},
+			"attributes": {
+				"town_name": "Hillston"
+			}
+		},
+		{
+			"id": 521,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Hillston Weir",
+			"geometry": {
+				"x": 200,
+				"y": 300
+			},
+			"attributes": {
+				"gauge_id": "w00077-412039",
+				"gauge_name": "Lachlan River at Hillston Weir",
+				"gauge_short_name": "Lachlan \u2013 Hillston Weir"
+			},
+			"current": {
+				"gauge_id": "w00077-412039",
+				"wiski_gauge_id": "412039",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Hillston Weir",
+				"gauge_short_name": "Lachlan \u2013 Hillston Weir",
+				"observation_day": 1688774400000,
+				"watercourse_discharge": 1291.68,
+				"watercourse_level": 1.02,
+				"watercourse_level_prev_day": 1.01,
+				"last_updated": "2023-07-08",
+				"water_quality_last_updated": "2023-07-08",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1495411200000,
+						"observation_value": 399.04,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "Medium",
+						"last_updated": "2017-05-22"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1688774400000,
+						"observation_value": 10.56,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2023-07-08"
+					}
+				]
+			}
+		},
+		{
+			"id": 522,
+			"feature_type": "Town",
+			"feature_label": "Booligal",
+			"geometry": {
+				"x": 200,
+				"y": 200
+			},
+			"attributes": {
+				"town_name": "Booligal"
+			}
+		},
+		{
+			"id": 523,
+			"feature_type": "Rivergauge",
+			"feature_label": "Lachlan \u2013 Corrong",
+			"geometry": {
+				"x": 200,
+				"y": 100
+			},
+			"attributes": {
+				"gauge_id": "w00077-412045",
+				"gauge_name": "Lachlan River at Corrong",
+				"gauge_short_name": "Lachlan \u2013 Corrong"
+			},
+			"current": {
+				"gauge_id": "w00077-412045",
+				"wiski_gauge_id": "412045",
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"gauge_name": "Lachlan River at Corrong",
+				"gauge_short_name": "Lachlan \u2013 Corrong",
+				"observation_day": 1688860800000,
+				"watercourse_discharge": 1283.04,
+				"watercourse_level": 2.52,
+				"watercourse_level_prev_day": 2.52,
+				"last_updated": "2023-07-09",
+				"water_quality_last_updated": "2005-02-20",
+				"has_water_quality": true,
+				"water_quality": [
+					{
+						"measure_id": "Salinity",
+						"measure_sort_order": 1,
+						"measure_description": "Salinity is the measure of the amount of dissolved salts in water.",
+						"observation_day": 1108857600000,
+						"observation_value": 919.43,
+						"uom": "\u200aEC in \u00b5S/cm",
+						"value_classification": "High",
+						"last_updated": "2005-02-20"
+					},
+					{
+						"measure_id": "Temperature",
+						"measure_sort_order": 2,
+						"measure_description": "Water temperature",
+						"observation_day": 1108857600000,
+						"observation_value": 22.83,
+						"uom": "\u200a\u00b0C",
+						"value_classification": null,
+						"last_updated": "2005-02-20"
+					}
+				]
+			}
+		},
+		{
+			"id": 524,
+			"feature_type": "Junction",
+			"feature_label": "Lachlan River confluences with Murrumbidgee River",
+			"geometry": {
+				"x": 200,
+				"y": 0
+			},
+			"attributes": {
+				"junction_description": "Lachlan River confluences with Murrumbidgee River"
+			}
+		},
+		{
+			"id": 716,
+			"feature_type": "Storage",
+			"feature_label": "Lake Cargelligo",
+			"geometry": {
+				"x": 300,
+				"y": 800
+			},
+			"attributes": {
+				"storage_id": 121,
+				"storage_name": "Lake Cargelligo",
+				"storage_short_name": "Lake Cargelligo"
+			},
+			"current": {
+				"storage_id": 121,
+				"storage_name": "Lake Cargelligo",
+				"storage_short_name": "Lake Cargelligo",
+				"storage_description": "Lake Cargelligo is located in New South Wales and in the Murray\u2013Darling drainage division. Lake Cargelligo is actually three separate water bodies: Curlew Water, Sheet of Water and Cargelligo.",
+				"percentage_full_now": 59.0,
+				"percentage_full_ly": 63.0,
+				"volume_total": 21695.21,
+				"volume_accessible": 15325.17,
+				"capacity_total": 36533.04,
+				"volume_dead": 6370.04,
+				"surface_area": null,
+				"nsw_state_share": null,
+				"vic_state_share": null,
+				"sa_state_share": null,
+				"qld_state_share": null,
+				"state_share_effective_date": null,
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"last_updated": "2023-07-09",
+				"current_year_date": "9 Jul 2023",
+				"last_year_date": "9 Jul 2022"
+			}
+		},
+		{
+			"id": 718,
+			"feature_type": "Storage",
+			"feature_label": "Lake Brewster",
+			"geometry": {
+				"x": 300,
+				"y": 600
+			},
+			"attributes": {
+				"storage_id": 118,
+				"storage_name": "Lake Brewster",
+				"storage_short_name": "Lake Brewster"
+			},
+			"current": {
+				"storage_id": 118,
+				"storage_name": "Lake Brewster",
+				"storage_short_name": "Lake Brewster",
+				"storage_description": "Lake Brewster is located in New South Wales and in the Murray\u2013Darling drainage division. Lake Brewster was formed by the construction of embankments on a naturally occurring depression.",
+				"percentage_full_now": 75.0,
+				"percentage_full_ly": 101.0,
+				"volume_total": 115079.68,
+				"volume_accessible": 115079.68,
+				"capacity_total": 153620.21,
+				"volume_dead": 0.0,
+				"surface_area": null,
+				"nsw_state_share": null,
+				"vic_state_share": null,
+				"sa_state_share": null,
+				"qld_state_share": null,
+				"state_share_effective_date": null,
+				"catchment_id": 13,
+				"catchment_display_name": "Lachlan",
+				"last_updated": "2023-07-03",
+				"current_year_date": "3 Jul 2023",
+				"last_year_date": "3 Jul 2022"
+			}
+		},
+		{
+			"id": 724,
+			"feature_type": "Junction",
+			"feature_label": "724",
+			"geometry": {
+				"x": 300,
+				"y": 0
+			},
+			"attributes": {
+				"junction_description": ""
+			}
+		}
+	],
+	"edges": [
+		{
+			"id": 1125,
+			"feature_type": "River",
+			"feature_label": "Murrumbidgee River",
+			"fromID": 324,
+			"toID": 124,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 0
+				},
+				"to": {
+					"x": 0,
+					"y": 0
+				}
+			},
+			"attributes": {
+				"river_name": "Murrumbidgee River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "horizontal",
+				"segment_no": 3,
+				"segment_count": 3,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1325,
+			"feature_type": "River",
+			"feature_label": "Murrumbidgee River",
+			"fromID": 524,
+			"toID": 324,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 0
+				},
+				"to": {
+					"x": 100,
+					"y": 0
+				}
+			},
+			"attributes": {
+				"river_name": "Murrumbidgee River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "horizontal",
+				"segment_no": 2,
+				"segment_count": 3,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1404,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 303,
+			"toID": 304,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 2100
+				},
+				"to": {
+					"x": 100,
+					"y": 2000
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 1,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1405,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 304,
+			"toID": 305,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 2000
+				},
+				"to": {
+					"x": 100,
+					"y": 1900
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 2,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1406,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 305,
+			"toID": 306,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 1900
+				},
+				"to": {
+					"x": 100,
+					"y": 1800
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 3,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1407,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 306,
+			"toID": 307,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 1800
+				},
+				"to": {
+					"x": 100,
+					"y": 1700
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 4,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1408,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 307,
+			"toID": 308,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 1700
+				},
+				"to": {
+					"x": 100,
+					"y": 1600
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 5,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1409,
+			"feature_type": "River",
+			"feature_label": "Belubula River",
+			"fromID": 308,
+			"toID": 509,
+			"geometry": {
+				"from": {
+					"x": 100,
+					"y": 1600
+				},
+				"to": {
+					"x": 200,
+					"y": 1500
+				}
+			},
+			"attributes": {
+				"river_name": "Belubula River",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "curve",
+				"line_direction": "vertical",
+				"segment_no": 6,
+				"segment_count": 6,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1525,
+			"feature_type": "River",
+			"feature_label": "Murrumbidgee River",
+			"fromID": 724,
+			"toID": 524,
+			"geometry": {
+				"from": {
+					"x": 300,
+					"y": 0
+				},
+				"to": {
+					"x": 200,
+					"y": 0
+				}
+			},
+			"attributes": {
+				"river_name": "Murrumbidgee River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "horizontal",
+				"segment_no": 1,
+				"segment_count": 3,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1604,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 503,
+			"toID": 504,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 2100
+				},
+				"to": {
+					"x": 200,
+					"y": 2000
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 1,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1605,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 504,
+			"toID": 505,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 2000
+				},
+				"to": {
+					"x": 200,
+					"y": 1900
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 2,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1606,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 505,
+			"toID": 506,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1900
+				},
+				"to": {
+					"x": 200,
+					"y": 1800
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 3,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1607,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 506,
+			"toID": 507,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1800
+				},
+				"to": {
+					"x": 200,
+					"y": 1700
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 4,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1608,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 507,
+			"toID": 508,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1700
+				},
+				"to": {
+					"x": 200,
+					"y": 1600
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 5,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1609,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 508,
+			"toID": 509,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1600
+				},
+				"to": {
+					"x": 200,
+					"y": 1500
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 6,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1610,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 509,
+			"toID": 510,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1500
+				},
+				"to": {
+					"x": 200,
+					"y": 1400
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 7,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1611,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 510,
+			"toID": 511,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1400
+				},
+				"to": {
+					"x": 200,
+					"y": 1300
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 8,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1612,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 511,
+			"toID": 512,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1300
+				},
+				"to": {
+					"x": 200,
+					"y": 1200
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 9,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1613,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 512,
+			"toID": 513,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1200
+				},
+				"to": {
+					"x": 200,
+					"y": 1100
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 10,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1614,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 513,
+			"toID": 514,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1100
+				},
+				"to": {
+					"x": 200,
+					"y": 1000
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 11,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1615,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 514,
+			"toID": 515,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 1000
+				},
+				"to": {
+					"x": 200,
+					"y": 900
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 12,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1616,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 515,
+			"toID": 516,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 900
+				},
+				"to": {
+					"x": 200,
+					"y": 800
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 13,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1617,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 516,
+			"toID": 517,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 800
+				},
+				"to": {
+					"x": 200,
+					"y": 700
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 14,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1619,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 517,
+			"toID": 519,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 700
+				},
+				"to": {
+					"x": 200,
+					"y": 500
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 15,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1620,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 519,
+			"toID": 520,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 500
+				},
+				"to": {
+					"x": 200,
+					"y": 400
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 16,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1621,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 520,
+			"toID": 521,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 400
+				},
+				"to": {
+					"x": 200,
+					"y": 300
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 17,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1622,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 521,
+			"toID": 522,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 300
+				},
+				"to": {
+					"x": 200,
+					"y": 200
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 18,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1623,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 522,
+			"toID": 523,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 200
+				},
+				"to": {
+					"x": 200,
+					"y": 100
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 19,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1624,
+			"feature_type": "River",
+			"feature_label": "Lachlan River",
+			"fromID": 523,
+			"toID": 524,
+			"geometry": {
+				"from": {
+					"x": 200,
+					"y": 100
+				},
+				"to": {
+					"x": 200,
+					"y": 0
+				}
+			},
+			"attributes": {
+				"river_name": "Lachlan River",
+				"river_size": 1,
+				"river_type": 1,
+				"line_type": "straight",
+				"line_direction": "vertical",
+				"segment_no": 20,
+				"segment_count": 20,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1817,
+			"feature_type": "River",
+			"feature_label": "Lake Creek",
+			"fromID": 716,
+			"toID": 517,
+			"geometry": {
+				"from": {
+					"x": 300,
+					"y": 800
+				},
+				"to": {
+					"x": 200,
+					"y": 700
+				}
+			},
+			"attributes": {
+				"river_name": "Lake Creek",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "curve",
+				"line_direction": "vertical",
+				"segment_no": 1,
+				"segment_count": 1,
+				"flow_direction": 1
+			}
+		},
+		{
+			"id": 1819,
+			"feature_type": "River",
+			"feature_label": "Mountain Creek",
+			"fromID": 718,
+			"toID": 519,
+			"geometry": {
+				"from": {
+					"x": 300,
+					"y": 600
+				},
+				"to": {
+					"x": 200,
+					"y": 500
+				}
+			},
+			"attributes": {
+				"river_name": "Mountain Creek",
+				"river_size": 3,
+				"river_type": 1,
+				"line_type": "curve",
+				"line_direction": "vertical",
+				"segment_no": 1,
+				"segment_count": 1,
+				"flow_direction": 1
+			}
+		}
+	],
+	"last_updated": "2023-07-09",
+	"fields": [
+		{
+			"name": "fromID",
+			"type": "integer",
+			"alias": "FromID",
+			"description": ""
+		},
+		{
+			"name": "x_max",
+			"type": "integer",
+			"alias": "X max",
+			"description": ""
+		},
+		{
+			"name": "y_max",
+			"type": "integer",
+			"alias": "Y max",
+			"description": ""
+		},
+		{
+			"name": "show_warnings",
+			"type": "boolean",
+			"alias": "Show warnings",
+			"description": ""
+		},
+		{
+			"name": "id",
+			"type": "integer",
+			"alias": "Id",
+			"description": ""
+		},
+		{
+			"name": "last_updated",
+			"type": "string",
+			"alias": "Current as at",
+			"description": ""
+		},
+		{
+			"name": "x_min",
+			"type": "integer",
+			"alias": "X min",
+			"description": ""
+		},
+		{
+			"name": "segment_no",
+			"type": "integer",
+			"alias": "Segment no",
+			"description": ""
+		},
+		{
+			"name": "segment_count",
+			"type": "integer",
+			"alias": "Segment count",
+			"description": ""
+		},
+		{
+			"name": "river_name",
+			"type": "string",
+			"alias": "River name",
+			"description": ""
+		},
+		{
+			"name": "y",
+			"type": "integer",
+			"alias": "Y",
+			"description": ""
+		},
+		{
+			"name": "has_data",
+			"type": "boolean",
+			"alias": "Has data",
+			"description": ""
+		},
+		{
+			"name": "feature_type",
+			"type": "string",
+			"alias": "Feature type",
+			"description": ""
+		},
+		{
+			"name": "x",
+			"type": "integer",
+			"alias": "X",
+			"description": ""
+		},
+		{
+			"name": "river_schematic_name",
+			"alias": "river_schematic_name",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"name": "feature_label",
+			"type": "string",
+			"alias": "Feature label",
+			"description": ""
+		},
+		{
+			"name": "junction_description",
+			"alias": "junction_description",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"name": "river_type",
+			"type": "integer",
+			"alias": "River type",
+			"description": ""
+		},
+		{
+			"name": "flow_direction",
+			"alias": "flow_direction",
+			"type": "int",
+			"description": ""
+		},
+		{
+			"name": "y_min",
+			"type": "integer",
+			"alias": "Y min",
+			"description": ""
+		},
+		{
+			"name": "river_size",
+			"type": "integer",
+			"alias": "River size",
+			"description": ""
+		},
+		{
+			"name": "line_type",
+			"alias": "line_type",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"name": "origin",
+			"alias": "origin",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"name": "line_direction",
+			"alias": "line_direction",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"name": "toID",
+			"type": "integer",
+			"alias": "ToID",
+			"description": ""
+		}
+	]
+}

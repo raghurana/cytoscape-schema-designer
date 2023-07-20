@@ -12,12 +12,7 @@ export interface FeaturesProps {
   featureClickHandler: (id: string) => void;
 }
 
-export const Features: React.FC<FeaturesProps> = ({
-  nodeDefinitions,
-  nodeDomReferences,
-  featureClickHandler,
-  nodeIdPrefix,
-}) => {
+export const Features: React.FC<FeaturesProps> = ({ nodeDefinitions, nodeDomReferences, featureClickHandler, nodeIdPrefix }) => {
   const featureCard = useRiverSchematicStore((s) => s.uiFeatureCard);
 
   const handlePillClick = useCallback(
@@ -25,16 +20,14 @@ export const Features: React.FC<FeaturesProps> = ({
     [featureClickHandler, nodeIdPrefix],
   );
 
-  if (nodeDefinitions.length === 0)
-    nodeDomReferences.current.forEach((pillRef) => pillRef.current?.parentNode?.removeChild(pillRef.current));
+  nodeDomReferences.current.forEach((pillRef) => pillRef.current?.parentNode?.removeChild(pillRef.current));
 
   return (
     <div>
       {nodeDefinitions.map((featureNode) => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const nodeId = featureNode.data.id!;
-        if (!nodeDomReferences.current.has(nodeId))
-          nodeDomReferences.current.set(nodeId, React.createRef<HTMLDivElement>());
+        if (!nodeDomReferences.current.has(nodeId)) nodeDomReferences.current.set(nodeId, React.createRef<HTMLDivElement>());
 
         const originalNodeId = CommonUtils.Text.stripPrefix(nodeId, nodeIdPrefix);
         return (

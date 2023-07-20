@@ -18,8 +18,8 @@ const Component: React.FC<{ catchmentId: number; graphOptions: Types.GraphOption
 
   useEffect(() => {
     if (!cytoscape) return;
-    CytoUtils.zooming.zoomToFit(cytoscape, graphOptions.zoomPadding);
-  }, [cytoscape, graphOptions.zoomPadding, renderInfo.featureNodes.length]);
+    setTimeout(() => CytoUtils.zooming.zoomToFit(cytoscape, graphOptions.zoomPadding), 100);
+  }, [cytoscape, graphOptions.zoomPadding, riverData?.catchmentId, riverData?.river_schematic_name]);
 
   return (
     <div className={styles.schematicWrapper}>

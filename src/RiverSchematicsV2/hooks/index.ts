@@ -5,4 +5,3 @@ export * from './useZoomCapability.ts';
 export * from './useRiverDataTransformed.ts';
 export * from './useRenderElements.ts';
 export * from './useFeatureInfoPopup.ts';
-export * from './usePanLimits.ts';

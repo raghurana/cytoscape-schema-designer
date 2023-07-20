@@ -1,5 +1,5 @@
 move label 30 points left on 352
-move label 15 points down on 352
+move label 15 points up on 352
 update edge between 549 and 348 to curve right
 move label 10 points up on 1449
 update edge between 542 and 741 to curve left
@@ -41,6 +41,6 @@ move label 125 points right on 2553
 move label 35 points up on 2650
 update edge between 1349 and 1551 to curve left
 update edge between 1140 and 1349 to curve left
-update attribute segment_no to 1 on 1153
+update edge label to River Murray on 1153
 move label 15 points down on 1153
 move label 80 points left on 1153

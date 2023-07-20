@@ -2,6 +2,6 @@ import { useSchematicLatestEvent } from '../../Designer/hooks/useSchematicLatest
 
 export const useRiverData = (catchmentId?: number) => {
   const designerData = useSchematicLatestEvent();
-  console.debug(`use River Data ${catchmentId}`);
+  console.log(`use River Data ${catchmentId}`);
   return designerData;
 };

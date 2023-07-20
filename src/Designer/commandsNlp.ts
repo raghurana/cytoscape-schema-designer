@@ -4,12 +4,19 @@ import { V8nValidator } from 'v8n';
 
 export const CommandsNlp: NlpCommandDefinition[] = [
   CommandFactory.undoCommand(),
+  CommandFactory.newSchematic(),
   CommandFactory.loadSchematicCommand(),
-  CommandFactory.addNodeRelativeCommand('Junction'),
+  CommandFactory.addJunctionNode(),
+  CommandFactory.addJunctionNodeRelativeCommand(),
+  CommandFactory.addRiverGaugeNodeRelativeCommand(),
+  CommandFactory.addStorageNodeRelativeCommand(),
+  CommandFactory.addTownNodeRelativeCommand(),
+  CommandFactory.addWetlandNodeRelativeCommand(),
   CommandFactory.addEdgeCommand(),
-  CommandFactory.deleteEdgeCommand(),
   CommandFactory.updateEdgeCurveCommand(),
-  CommandFactory.updateAttributeCommand(),
+  CommandFactory.updateEdgeLabelCommand(),
+  CommandFactory.updateEdgeLineCommand(),
+  CommandFactory.deleteEdgeCommand(),
   CommandFactory.moveLabelCommand(),
 ];
 

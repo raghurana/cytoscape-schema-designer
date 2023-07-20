@@ -1,0 +1,103 @@
+new schematic 8
+add junction at x 10 and y -1000
+add junction 100 points right of 100
+add edge between 100 and 101
+update edge line to major river on 102
+update edge label to Barwon River on 102
+move label 15 points down on 102
+move label 80 points left on 102
+add junction 600 points up of 101
+add edge between 101 and 103
+update edge line to tributary on 104
+add junction 50 points right of 103
+add junction 100 points down of 103
+add edge between 106 and 105
+update edge between 105 and 106 to curve left
+update label to Gil Gil Creek on 109
+move label 30 points up on 109
+add junction 50 points right of 105
+add edge between 105 and 110
+update label to Carole Creek on 111
+move label 10 points up on 111
+add river gauge 100 points down of 110 with gauge id 1
+add edge between 110 and 112
+update edge line to major river on 113
+add storage 100 points up of 110 with storage id 100 and storage name Tareelaroi Weir
+add edge between 110 and 114
+add river gauge 100 points down of 112 with gauge id 2
+add edge between 112 and 116
+add river gauge 100 points down of 116 with gauge id 3
+add edge between 116 and 118
+add wetland 100 points down of 118 with name Gwydir Wetlands
+add edge between 118 and 120
+add junction 200 points down of 120
+add edge between 120 and 122
+update edge line to ephemeral on 123
+update edge label to Gwydir floodplain on 123
+move label 20 points up on 123
+add edge between 101 and 122
+update edge line to major river on 124
+add junction 100 points up of 114
+add edge between 112 and 125
+add town 100 points right of 114 with name Moree
+add edge between 125 and 127
+update edge line to tributary on 128
+update edge between 125 and 127 to curve right
+add river gauge 100 points down of 127 with gauge id 4
+add edge between 127 and 131
+add junction 100 points right of 122
+add edge between 131 and 133
+add edge between 122 and 133
+update edge line to major river on 135
+add town 100 points right of 133 with name Collarenbery
+add edge between 133 and 136
+move label 15 points up on 136
+move label 50 points left on 136
+add junction 100 points right of 136
+add edge between 136 and 138
+update edge label to Barwon River on 139
+move label 15 points down on 139
+move label 100 points right on 139
+update edge label to Mehi River on 128
+move label 15 points up on 128
+add river gauge 100 points up of 125 with gauge id 5
+add edge between 125 and 140
+add town 100 points up of 140 with name Pallamallawa
+add edge between 140 and 142
+add river gauge 100 points up of 142 with gauge id 6
+add edge between 142 and 144
+add town 100 points up of 144 with name Gravesend
+add edge between 144 and 146
+add junction 100 points up of 146
+add edge between 146 and 148
+add junction 100 points up of 148
+add edge between 148 and 150
+add town 100 points up of 150 with name Bingara
+add edge between 150 and 152
+add river gauge 100 points up of 152 with gauge id 7
+add edge between 152 and 154
+add storage 100 points up of 154 with storage id 101 and storage name Copeton
+add edge between 154 and 156
+add town 100 points up of 156 with name Bundarra
+add edge between 156 and 158
+add river gauge 100 points up of 158 with gauge id 8
+add edge between 158 and 160
+add junction 100 points up of 160
+add edge between 160 and 162
+update edge label to Gwydir River on 163
+move label 40 points up on 163
+add river gauge 100 points right of 150 with gauge id 9
+add edge between 148 and 164
+update edge line to tributary on 165
+update edge between 148 and 164 to curve left
+add junction 100 points up of 164
+add edge between 164 and 168
+update edge label to Horton River on 169
+move label 40 points up on 169
+add river gauge 100 points left of 152 with gauge id 10
+add edge between 150 and 170
+update edge between 150 and 170 to curve right
+add junction 100 points up of 170
+add edge between 170 and 174
+update edge label to Myall Creek on 175
+move label 40 points up on 175

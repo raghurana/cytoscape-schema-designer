@@ -10,7 +10,8 @@
 
 #Todo
 
+- [x] build a new schematic
 - [ ] save schema button
-- [ ] persist changes to local storage
-- [ ] build a new schematic
+- [ ] built in command history
+- [ ] better choose file dialog
 - [ ] voice commands

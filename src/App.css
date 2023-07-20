@@ -16,3 +16,12 @@ label {
   height: 100vh;
   padding: 10px;
 }
+
+::-webkit-scrollbar {
+  background-color: pink; /* Set your desired background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgray; /* Set your desired background color */
+  border-radius: 5px;
+}

@@ -1,11 +1,22 @@
 import { Commands, Direction, Payload } from './commands.ts';
+import { SchematicUtils } from './utils/schematicUtils.ts';
 import {
   Position,
   SchematicEdge,
   SchematicJsonData,
   SchematicNode,
+  riverSizeMap,
+  riverTypeMap,
+  Types,
+  NodeAttributes,
+  RiverGaugeAttributes,
+  JunctionAttributes,
+  CurrentRiverGaugeDetails,
+  StorageAttributes,
+  CurrentStorageDetails,
+  TownAttributes,
+  WetlandAttributes,
 } from '../RiverSchematicsV2/components/RiverSchematic/RiverSchematic.interfaces.ts';
-import { SchematicUtils } from './utils/schematicUtils.ts';
 
 export interface SchematicUpdated {
   data: SchematicJsonData | undefined;
@@ -40,12 +51,23 @@ export class SchematicAggregate implements Commands {
 
   newSchematic(payload: Payload.NewSchematic) {
     this.events = [];
-    this.data = { meta: { name: payload.name }, nodes: [], edges: [] };
+    this.data = { catchmentId: payload.catchmentId, nodes: [], edges: [] };
   }
 
   loadSchematic(payload: Payload.LoadSchematic) {
     this.events = [];
     this.data = JSON.parse(payload.fileJson);
+  }
+
+  addNode(payload: Payload.AddNode) {
+    this.data?.nodes.push(payload);
+  }
+
+  addJunctionNode(payload: Payload.AddJunctionNode) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const newNodeId = SchematicUtils.getNextAvailableId(this.data).toString();
+    const newJunctionNode = this.createNewNode(newNodeId, 'Junction', '', { x: +payload.x, y: +payload.y }, {} as JunctionAttributes);
+    this.addNode(newJunctionNode);
   }
 
   addJunctionNodeRelative(payload: Payload.AddJunctionNodeRelative) {
@@ -54,22 +76,88 @@ export class SchematicAggregate implements Commands {
     if (!referenceNode) throw new AggregateError(`Reference node with id ${payload.refNodeId} not found`);
     const newJunctionGeometry = this.geometryFromReferenceNode(referenceNode, payload.direction, +payload.distance);
     const newNodeId = payload.newNodeId ?? SchematicUtils.getNextAvailableId(this.data).toString();
-    const newJunctionNode = this.createJunctionNode(newNodeId, newJunctionGeometry, payload.junctionDesc);
-    this.addNode(newJunctionNode);
+    this.addNode(
+      this.createNewNode(newNodeId, 'Junction', '', newJunctionGeometry, {
+        junction_description: payload.junctionDesc ?? '',
+      }),
+    );
   }
 
-  addNode(payload: Payload.AddNode) {
-    this.data?.nodes.push(payload);
+  addRiverGaugeNodeRelative(payload: Payload.AddRiverGaugeNodeRelative) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const referenceNode = this.data.nodes.find((n) => n.id === +payload.refNodeId);
+    if (!referenceNode) throw new AggregateError(`Reference node with id ${payload.refNodeId} not found`);
+    const newNodeId = payload.newNodeId ?? SchematicUtils.getNextAvailableId(this.data).toString();
+    const newNodeGeometry = this.geometryFromReferenceNode(referenceNode, payload.direction, +payload.distance);
+    const newNode = this.createNewNode(newNodeId, 'Rivergauge', '', newNodeGeometry, { gauge_id: payload.gaugeId } as RiverGaugeAttributes);
+    newNode.current = {
+      watercourseLevel: 999,
+      watercourseDischarge: 999,
+    } as CurrentRiverGaugeDetails;
+    this.addNode(newNode);
+  }
+
+  addStorageNodeRelative(payload: Payload.AddStorageNodeRelative) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const referenceNode = this.data.nodes.find((n) => n.id === +payload.refNodeId);
+    if (!referenceNode) throw new AggregateError(`Reference node with id ${payload.refNodeId} not found`);
+    const newNodeId = payload.newNodeId ?? SchematicUtils.getNextAvailableId(this.data).toString();
+    const newNodeGeometry = this.geometryFromReferenceNode(referenceNode, payload.direction, +payload.distance);
+    const newNode = this.createNewNode(newNodeId, 'Storage', payload.storageName, newNodeGeometry, {
+      storage_id: +payload.storageId,
+    } as StorageAttributes);
+    newNode.current = {
+      percentage_full_now: 99,
+      volume_total: 999,
+    } as CurrentStorageDetails;
+    this.addNode(newNode);
+  }
+
+  addTownNodeRelative(payload: Payload.AddTownNodeRelative) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const referenceNode = this.data.nodes.find((n) => n.id === +payload.refNodeId);
+    if (!referenceNode) throw new AggregateError(`Reference node with id ${payload.refNodeId} not found`);
+    const newNodeId = payload.newNodeId ?? SchematicUtils.getNextAvailableId(this.data).toString();
+    const newNodeGeometry = this.geometryFromReferenceNode(referenceNode, payload.direction, +payload.distance);
+    const newNode = this.createNewNode(newNodeId, 'Town', payload.townName, newNodeGeometry, {
+      town_name: payload.townName,
+    } as TownAttributes);
+    this.addNode(newNode);
+  }
+
+  addWetlandNodeRelative(payload: Payload.AddWetlandNodeRelative) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const referenceNode = this.data.nodes.find((n) => n.id === +payload.refNodeId);
+    if (!referenceNode) throw new AggregateError(`Reference node with id ${payload.refNodeId} not found`);
+    const newNodeId = payload.newNodeId ?? SchematicUtils.getNextAvailableId(this.data).toString();
+    const newNodeGeometry = this.geometryFromReferenceNode(referenceNode, payload.direction, +payload.distance);
+    const newNode = this.createNewNode(newNodeId, 'Wetland', payload.wetlandName, newNodeGeometry, {
+      wetland_name: payload.wetlandName,
+    } as WetlandAttributes);
+    this.addNode(newNode);
   }
 
   addEdge(payload: Payload.AddEdge) {
     if (!this.data) throw new AggregateError(this.NoDataMessage);
     const nextAvailableId = payload.newEdgeId ? +payload.newEdgeId : SchematicUtils.getNextAvailableId(this.data);
-    this.data?.edges.push({
+    const lastEdgeAttributes = this.data.edges.length > 0 ? this.data.edges[this.data.edges.length - 1]?.attributes : undefined;
+    const newEdge: SchematicEdge = {
       id: nextAvailableId,
       fromID: +payload.fromId,
       toID: +payload.toId,
-    });
+    };
+    this.data?.edges.push(newEdge);
+    if (lastEdgeAttributes) {
+      this.setElementAttrib(newEdge, 'river_size', lastEdgeAttributes.river_size);
+      this.setElementAttrib(newEdge, 'river_type', lastEdgeAttributes.river_type);
+    }
+  }
+
+  deleteEdge(payload: Payload.DeleteEdge) {
+    if (!this.data) throw new AggregateError(this.NoDataMessage);
+    const deleteIndex = this.data.edges.findIndex((e) => e.id === +payload.edgeId);
+    if (deleteIndex < 0) throw new AggregateError(`Edge with Id ${payload.edgeId} not found`);
+    return this.data.edges.splice(deleteIndex, 1)?.[0];
   }
 
   updateEdgeCurve(payload: Payload.UpdateEdgeCurve) {
@@ -106,11 +194,7 @@ export class SchematicAggregate implements Commands {
         newEdgeId: curveEdgeId,
       });
 
-      this.updateElementAttribute({
-        id: curveEdgeId,
-        attributeName: 'curve_type',
-        value: payload.curve,
-      });
+      this.setElementAttribById(curveEdgeId, 'curve_type', payload.curve);
       return;
     }
 
@@ -125,19 +209,30 @@ export class SchematicAggregate implements Commands {
     horizontalEdge.fromID = junctionCloserToTargetId;
     horizontalEdge.toID = targetNode.id;
 
-    this.addNode(
-      this.createJunctionNode(junctionCloserToSourceId.toString(), {
+    const junctionCloserToSrc = this.createNewNode(
+      junctionCloserToSourceId.toString(),
+      'Junction',
+      '',
+      {
         x: sourceNode.geometry.x,
         y: isTargetDown ? targetNode.geometry.y + normalHeight : targetNode.geometry.y - normalHeight,
-      }),
+      },
+      {} as JunctionAttributes,
     );
 
-    this.addNode(
-      this.createJunctionNode(junctionCloserToTargetId.toString(), {
+    const junctionCloserToTarget = this.createNewNode(
+      junctionCloserToTargetId.toString(),
+      'Junction',
+      '',
+      {
         x: isTargetRight ? sourceNode.geometry.x + junctionOffsetX : sourceNode.geometry.x - junctionOffsetX,
         y: targetNode.geometry.y,
-      }),
+      },
+      {} as JunctionAttributes,
     );
+
+    this.addNode(junctionCloserToSrc);
+    this.addNode(junctionCloserToTarget);
 
     this.addEdge({
       fromId: sourceNode.id.toString(),
@@ -151,38 +246,44 @@ export class SchematicAggregate implements Commands {
       newEdgeId: newCurvedEdgeId.toString(),
     });
 
-    this.updateElementAttribute({
-      id: newCurvedEdgeId.toString(),
-      attributeName: 'curve_type',
-      value: payload.curve,
-    });
+    this.setElementAttribById(newCurvedEdgeId.toString(), 'curve_type', payload.curve);
   }
 
-  deleteEdge(payload: Payload.DeleteEdge) {
+  updateEdgeLabel(payload: Payload.UpdateEdgeLabel) {
     if (!this.data) throw new AggregateError(this.NoDataMessage);
-    const deleteIndex = this.data.edges.findIndex((e) => this.edgeFromToPredicate(e, payload.fromId, payload.toId));
-    if (deleteIndex < 0) throw new AggregateError(`Edge with fromId ${payload.fromId}, toId ${payload.toId} not found`);
-    return this.data.edges.splice(deleteIndex, 1)?.[0];
+    const edge = this.data.edges.find((e) => e.id === +payload.edgeId);
+    if (!edge) throw new AggregateError(`Edge with id ${payload.edgeId} not found`);
+    edge.feature_type = 'River';
+    this.setElementAttrib(edge, 'river_name', payload.newLabel);
+    this.setElementAttrib(edge, 'segment_no', 1);
   }
 
-  updateElementAttribute(payload: Payload.UpdateElementAttribute) {
+  updateEdgeLine(payload: Payload.UpdateEdgeLine) {
     if (!this.data) throw new AggregateError(this.NoDataMessage);
-    const element = this.findElementWithId(payload.id);
-    const final = element.node ?? element.edge;
-    if (!final) throw new AggregateError(`A node or edge with id ${payload.id} not found`);
-    this.setElementAttrib(final, payload.attributeName, payload.value);
+    const edge = this.data.edges.find((e) => e.id === +payload.edgeId);
+    if (!edge) throw new AggregateError(`Edge with id ${payload.edgeId} not found`);
+    if (payload.lineType === 'major river' || payload.lineType === 'tributary') {
+      const riverSizeValue = this.getKeyByValue(riverSizeMap, payload.lineType);
+      if (riverSizeValue) this.setElementAttrib(edge, 'river_size', riverSizeValue);
+      this.setElementAttrib(edge, 'river_type', '');
+      return;
+    }
+    if (payload.lineType === 'ephemeral') {
+      const riverTypeValue = this.getKeyByValue(riverTypeMap, payload.lineType);
+      const riverSizeValue = this.getKeyByValue(riverSizeMap, 'tributary');
+      if (riverTypeValue) this.setElementAttrib(edge, 'river_type', riverTypeValue);
+      if (riverSizeValue) this.setElementAttrib(edge, 'river_size', riverSizeValue);
+      return;
+    }
   }
 
   moveLabel(payload: Payload.MoveLabel) {
     if (!this.data) throw new AggregateError(this.NoDataMessage);
-    const element = this.findElementWithId(payload.id);
-    const final = element.node ?? element.edge;
-    if (!final) throw new AggregateError(`A node or edge with id ${payload.id} not found`);
-    this.updateElementAttribute({
-      id: final.id.toString(),
-      attributeName: payload.direction === 'left' || payload.direction === 'right' ? 'label_margin_x' : 'label_margin_y',
-      value: payload.direction === 'left' || payload.direction === 'up' ? `-${payload.distance}` : payload.distance,
-    });
+    this.setElementAttribById(
+      payload.id,
+      payload.direction === 'left' || payload.direction === 'right' ? 'label_margin_x' : 'label_margin_y',
+      payload.direction === 'left' || payload.direction === 'up' ? `-${payload.distance}` : payload.distance,
+    );
   }
 
   private geometryFromReferenceNode(referenceNode: SchematicNode, direction: Direction, relativeDistance: number): Position {
@@ -204,7 +305,14 @@ export class SchematicAggregate implements Commands {
     return (edge.fromID === +fromId && edge.toID === +toId) || (edge.fromID === +toId && edge.toID === +fromId);
   }
 
-  private setElementAttrib(element: SchematicNode | SchematicEdge, attribName: string, attribValue: string) {
+  private setElementAttribById(id: string, attribName: string, attribValue: string | number | boolean) {
+    const element = this.findElementWithId(id);
+    const final = element.node ?? element.edge;
+    if (!final) throw new AggregateError(`A node or edge with id ${id} not found`);
+    this.setElementAttrib(final, attribName, attribValue);
+  }
+
+  private setElementAttrib(element: SchematicNode | SchematicEdge, attribName: string, attribValue: string | number | boolean) {
     const newAttrib = Object.create({});
     newAttrib[attribName] = attribValue;
     element.attributes = { ...element.attributes, ...newAttrib };
@@ -216,15 +324,23 @@ export class SchematicAggregate implements Commands {
     return { node: nodeElement, edge: edgeElement };
   }
 
-  private createJunctionNode(id: string, geometry: Position, junctionDesc?: string): SchematicNode {
+  private createNewNode<T extends NodeAttributes>(
+    id: string,
+    featureType: Types.NodeFeatureType,
+    featureLabel: string,
+    geometry: Position,
+    attribs: T,
+  ): SchematicNode {
     return {
       id: +id,
-      feature_type: 'Junction',
-      feature_label: '',
+      feature_type: featureType,
+      feature_label: featureLabel,
       geometry: geometry,
-      attributes: {
-        junction_description: junctionDesc ?? '',
-      },
+      attributes: attribs,
     };
+  }
+
+  private getKeyByValue<K, V>(map: Map<K, V>, value: V) {
+    return [...map.entries()].find(([, v]) => v === value)?.[0];
   }
 }

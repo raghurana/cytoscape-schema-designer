@@ -1,8 +1,14 @@
+.container {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
 .commandsTable {
   width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
   text-align: left;
+  overflow: scroll;
 }
 
 th,
@@ -10,14 +16,7 @@ td {
   border: 1px solid black;
   white-space: normal;
   padding: 10px;
-}
-
-.command {
-  min-width: 500px;
-}
-
-.commandExample {
-  min-width: 350px;
+  line-height: 2;
 }
 
 .param {
