@@ -7,14 +7,15 @@
   display: flex;
   align-items: center;
   margin: 5px 0px;
+  column-gap: 10px;
+}
+
+.spacer {
+  flex-grow: 1;
 }
 
 input {
   border-width: 1px;
   border-radius: 5px;
   padding: 5px;
-}
-
-.loadCommandsBtn {
-  margin-left: 5px;
 }

@@ -13,5 +13,5 @@
 - [x] build a new schematic
 - [x] better choose file dialog
 - [x] save schema button
-- [ ] built in command history
+- [x] built in command history
 - [ ] voice commands

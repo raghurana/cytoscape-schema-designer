@@ -1,6 +1,8 @@
 import { RiverSchematic } from '../../RiverSchematicsV2';
+import { useCommandHistoryStore } from '../stores/commandHistoryStore';
 import { createSelectors } from '../stores/createSelectors';
 import { useSettingsStore } from '../stores/settingsStore';
+import { CommandHistory } from './CommandHistory';
 import { CommandInput } from './CommandInput';
 import styles from './Home.module.css';
 import { JsonOutput } from './JsonOutput';
@@ -11,14 +13,17 @@ import ReactCardFlip from 'react-card-flip';
 export const Home: React.FC = () => {
   const catchmentId = 0;
   const settingsStore = createSelectors(useSettingsStore);
-  const open = settingsStore.use.open();
+  const commandHistory = createSelectors(useCommandHistoryStore);
+  const settingsOpen = settingsStore.use.open();
   const showJson = settingsStore.use.showJson();
   const graphOptions = settingsStore.use.graphOptions();
+  const commandHistoryOpen = commandHistory.use.open();
 
   return (
     <div className={styles.container}>
       <Toolbar />
-      {open && <Settings />}
+      {settingsOpen && <Settings />}
+      {commandHistoryOpen && <CommandHistory />}
       <ReactCardFlip
         isFlipped={showJson}
         infinite={true}

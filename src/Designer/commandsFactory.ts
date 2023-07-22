@@ -5,7 +5,8 @@ export const undoCommand = (): NlpCommandDefinition => {
   return {
     intent: 'undo',
     commandText: 'z',
-    commandNotes: 'Undo last command',
+    commandNotes: `Undo last command.
+    <b>** <u>Note</u> ** also removes last saved command from history</b>`,
     commandExample: 'z',
   };
 };
@@ -15,7 +16,8 @@ export const newSchematic = (): NlpCommandDefinition => {
   return {
     intent: intent,
     commandText: `new schematic @${intent}_catchmentId`,
-    commandNotes: 'Create a new schematic for a catchment. "catchmentId" is the ID of an existing catchment, a number > 0',
+    commandNotes: `Create a new schematic for a catchment. "catchmentId" is the ID of an existing catchment, a number > 0.
+    <b>** <u>Note</u> ** clears previous command history</b>`,
     commandExample: 'new schematic 13',
     commandValidator: PayloadValidator.newSchematic,
     entityExtraction: [
@@ -35,7 +37,8 @@ export const loadSchematicCommand = (): NlpCommandDefinition => {
   return {
     intent: intent,
     commandText: `load schematic @${intent}_fileJson`,
-    commandNotes: 'Load a schematic from a json document. "fileJson" is a valid non-empty json document.',
+    commandNotes: `Load a schematic from a json document. "fileJson" is a valid non-empty json document.
+    <b>** <u>Note</u> ** this command is not saved to the history</b>`,
     commandExample: 'load schematic {  "nodes": [], "edges": [] }',
     commandValidator: PayloadValidator.loadSchematic,
     entityExtraction: [

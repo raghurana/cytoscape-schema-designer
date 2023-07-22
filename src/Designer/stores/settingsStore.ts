@@ -30,10 +30,9 @@ export const useSettingsStore = create(
       designerSettings: {
         nodes: {
           appendToLabel: 'id',
-          showJunctions: true,
         },
         edges: {
-          appendToLabel: 'id',
+          appendToLabel: 'none',
         },
       },
     },
@@ -49,14 +48,12 @@ export const useSettingsStore = create(
     },
     updateNodeLabelOption(newOption: Types.NodeLabelDesignerExtension) {
       set((prev) => {
-        if (prev.graphOptions.designerSettings?.nodes)
-          prev.graphOptions.designerSettings.nodes.appendToLabel = newOption;
+        if (prev.graphOptions.designerSettings?.nodes) prev.graphOptions.designerSettings.nodes.appendToLabel = newOption;
       });
     },
     updateEdgeLabelOption(newOption: Types.EdgeLabelDesignerExtension) {
       set((prev) => {
-        if (prev.graphOptions.designerSettings?.edges)
-          prev.graphOptions.designerSettings.edges.appendToLabel = newOption;
+        if (prev.graphOptions.designerSettings?.edges) prev.graphOptions.designerSettings.edges.appendToLabel = newOption;
       });
     },
   })),

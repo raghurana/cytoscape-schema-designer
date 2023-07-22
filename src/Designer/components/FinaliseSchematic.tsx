@@ -59,7 +59,8 @@ export const FinaliseSchematic: React.FC = () => {
   return (
     <div className={styles.formContainer}>
       <form className={styles.form} onSubmit={handleSubmit(onSaveToDisk)}>
-        <h1>Finalise Schematic Data</h1>
+        <h1>Finalise Schematic Json</h1>
+        <br />
         <label className={styles.formLabel}>
           Catchment Id: <br />
           <input type="text" className={styles.formInput} {...register('catchmentId', { required: true, pattern: /\d+/ })} />

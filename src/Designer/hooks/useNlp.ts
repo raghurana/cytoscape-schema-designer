@@ -8,13 +8,19 @@ import { useStore } from 'zustand';
 import { Commands } from '../commands';
 import { V8nValidator } from 'v8n';
 import { AggregateError } from '../schematicAggregate';
+import { useCommandHistoryStore } from '../stores/commandHistoryStore';
+import { createSelectors } from '../stores/createSelectors';
 
 const English = 'en';
 
 export const useNLP = () => {
   const [model, setModel] = useState<Nlp | undefined>(undefined);
-  const { dispatch } = useStore(schematicStore);
   const validators = useRef(new Map<keyof Commands, V8nValidator>());
+  const { dispatch } = useStore(schematicStore);
+  const historyStore = createSelectors(useCommandHistoryStore);
+  const saveCommand = historyStore.use.saveCommand();
+  const deleteLastCommand = historyStore.use.deleteLastCommand();
+  const clearHistory = historyStore.use.clear();
 
   useEffect(() => {
     const trainModel = async () => {
@@ -59,7 +65,7 @@ export const useNLP = () => {
 
       // Construct payload
       const commandType = result.intent as keyof Commands;
-      const payload = Object.create({});
+      const payload: Record<string, unknown> = {};
       result.entities?.forEach((e) => {
         const entityName = e.entity as string;
         if (entityName.startsWith(commandType)) {
@@ -81,14 +87,18 @@ export const useNLP = () => {
       }
 
       try {
+        if (commandType === 'newSchematic') clearHistory();
         dispatch({ type: commandType, payload });
+        if (commandType === 'loadSchematic') return true;
+        if (commandType !== 'undo') saveCommand(command);
+        else deleteLastCommand();
         return true;
       } catch (err) {
         if (err instanceof AggregateError) alert(err.message);
         return false;
       }
     },
-    [model, dispatch],
+    [model, dispatch, saveCommand, deleteLastCommand, clearHistory],
   );
 
   return processCommand;

@@ -229,7 +229,6 @@ export namespace Types {
     designerSettings?: {
       nodes?: {
         appendToLabel: NodeLabelDesignerExtension;
-        showJunctions: boolean;
       };
       edges?: {
         appendToLabel: EdgeLabelDesignerExtension;

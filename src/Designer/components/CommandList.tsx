@@ -8,7 +8,7 @@ export const CommandsList: React.FC = () => (
         <tr>
           <th>No.</th>
           <th>Command</th>
-          <th>Notes</th>
+          <th>Description</th>
           <th>Example</th>
         </tr>
       </thead>
