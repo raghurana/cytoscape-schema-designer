@@ -11,7 +11,7 @@
 #Todo
 
 - [x] build a new schematic
-- [ ] save schema button
+- [x] better choose file dialog
+- [x] save schema button
 - [ ] built in command history
-- [ ] better choose file dialog
 - [ ] voice commands

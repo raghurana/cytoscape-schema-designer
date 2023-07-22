@@ -69,14 +69,14 @@ export namespace PayloadValidator {
     refNodeId: v8nExtended().positiveParsableNumber(),
     distance: v8nExtended().positiveParsableNumber(),
     direction: v8nExtended().validDirection(),
-    gaugeId: v8nExtended().positiveParsableNumber(),
+    gaugeId: v8n().string().not.empty(),
   });
 
   export const addStorageNodeRelative = v8n().schema({
     refNodeId: v8nExtended().positiveParsableNumber(),
     distance: v8nExtended().positiveParsableNumber(),
     direction: v8nExtended().validDirection(),
-    storageId: v8nExtended().positiveParsableNumber(),
+    storageId: v8n().string().not.empty(),
     storageName: v8n().string().not.empty(),
   });
 

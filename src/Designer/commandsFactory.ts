@@ -126,8 +126,8 @@ export const addRiverGaugeNodeRelativeCommand = (): NlpCommandDefinition => {
     "distance" must be a number > 0.
     "direction" must be one of ${DirectionArray.join(', ')}.
     "refNodeId" is the id of an existing node, a number > 0.
-    "gaugeId" is a number > 0.`,
-    commandExample: `add river gauge 10 points right of 523 with gauge id 123`,
+    "gaugeId" is a non empty string.`,
+    commandExample: `add river gauge 10 points right of 523 with gauge id w001-123`,
     commandValidator: PayloadValidator.addRiverGaugeNodeRelative,
     entityExtraction: [
       {
@@ -174,9 +174,9 @@ export const addStorageNodeRelativeCommand = (): NlpCommandDefinition => {
     "distance" must be a number > 0.
     "direction" must be one of ${DirectionArray.join(', ')}.
     "refNodeId" is the id of an existing node, a number > 0.
-    "storageId" is a number > 0.
+    "storageId" is a non empty string.
     "storageName" is a non empty string.`,
-    commandExample: `add storage 10 points right of 523 with storage id 123`,
+    commandExample: `add storage 10 points right of 523 with storage id w002-345 and storage name Coperton`,
     commandValidator: PayloadValidator.addStorageNodeRelative,
     entityExtraction: [
       {

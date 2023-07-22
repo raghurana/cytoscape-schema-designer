@@ -1,0 +1,36 @@
+.formContainer {
+  display: flex;
+  column-gap: 10px;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+}
+
+.saveBtn {
+  min-width: 150px;
+  min-height: 40px;
+  margin-top: 20px;
+}
+
+.formLabel {
+  font-size: small;
+  margin-top: 20px;
+}
+
+.formInput {
+  margin-top: 2px;
+  min-width: 200px;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  font-weight: normal;
+  margin-top: 2px;
+  text-align: center;
+}

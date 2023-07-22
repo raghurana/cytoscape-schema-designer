@@ -1,6 +1,7 @@
 export interface SchematicJsonData {
   catchmentId: number;
   river_schematic_name?: string;
+  version: number;
   nodes: SchematicNode[];
   edges: SchematicEdge[];
 }

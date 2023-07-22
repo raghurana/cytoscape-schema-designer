@@ -15,6 +15,7 @@ label {
   background-color: pink;
   height: 100vh;
   padding: 10px;
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {

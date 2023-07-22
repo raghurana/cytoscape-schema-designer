@@ -51,7 +51,7 @@ export class SchematicAggregate implements Commands {
 
   newSchematic(payload: Payload.NewSchematic) {
     this.events = [];
-    this.data = { catchmentId: payload.catchmentId, nodes: [], edges: [] };
+    this.data = { catchmentId: +payload.catchmentId, version: 0, nodes: [], edges: [] };
   }
 
   loadSchematic(payload: Payload.LoadSchematic) {
